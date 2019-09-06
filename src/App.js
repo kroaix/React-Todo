@@ -1,14 +1,11 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
-import './components/TodoComponents/Todo.css'
+import './components/TodoComponents/Todo.css';
+import { Card, Header } from 'semantic-ui-react';
 
 const tasks = [
-  {
-    task: '',
-    id: '',
-    completed: false
-  }
+  
 ]
 
 class App extends React.Component {
@@ -51,10 +48,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Todo List:</h2>
-        <TodoForm addTask={this.addTask} />
-        <TodoList tasks={this.state.tasks} toggleTask={this.toggleTask} clearCompleted={this.clearCompleted} />
+      <div className="MainContent">
+        <Card>
+          <Card.Content>
+            <Header align="center">Todo List</Header>
+            <TodoForm addTask={this.addTask} />
+            <TodoList
+              tasks={this.state.tasks}
+              toggleTask={this.toggleTask}
+              clearCompleted={this.clearCompleted}
+            />
+          </Card.Content>
+        </Card>
       </div>
     );
   }

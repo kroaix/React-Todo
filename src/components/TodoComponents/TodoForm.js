@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Form, Button, Input } from 'semantic-ui-react';
 class TodoForm extends React.Component {
   constructor(){
     super();
@@ -19,17 +19,24 @@ class TodoForm extends React.Component {
   }
 
   render(){
-    return(
-      <form onSubmit={this.handleSubmit}>
-        <input 
-          type="text"
-          name="task"
-          value={this.state.taskName}
-          onChange={this.handleChanges}
-        />
-        <button>ADD</button>
-      </form>
-    )
+    return (
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Field>
+          <Input
+            type="text"
+            name="task"
+            value={this.state.taskName}
+            onChange={this.handleChanges}
+            placeholder="Add Task"
+            icon="pencil"
+            iconPosition="left"
+            required
+          />
+          <Button positive fluid type="submit" icon="plus">
+          </Button>
+        </Form.Field>
+      </Form>
+    );
   }
 }
 

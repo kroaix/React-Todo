@@ -1,3 +1,42 @@
 .task.completed{
   text-decoration: line-through;
+  color: green;
+}
+.MainContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.ui.card{
+  width: 400px!important;
+  min-height: 400px!important;
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+}
+.ui.form div.field{
+  display: flex!important;
+  flex-direction: row!important;
+}
+i.icon.check:before{
+  opacity: 0.3;
+}
+.task.completed i.icon.check:before{
+  color: green!important;
+  opacity: 0.8;
+  transition: ease 0.4s;
+}
+.task.completed .ui.grey.segment:not(.inverted){
+  border-top: 2px solid green!important;
+  transition: ease 0.4s;
+}
+.ui.grey.segment:not(.inverted){
+  margin: 10px 0;
+}
+.ui.positive.button{
+  margin-left: 10px;
+}
+.ui.negative.button{
+  margin-top: 10px;
 }

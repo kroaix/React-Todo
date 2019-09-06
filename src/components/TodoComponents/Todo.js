@@ -1,4 +1,5 @@
 import React from 'react';
+import { Segment, Icon } from 'semantic-ui-react';
 
 const Todo = props => {
   return (
@@ -6,7 +7,9 @@ const Todo = props => {
       className={`task${props.task.completed ? " completed" : ""}`}
       onClick={() => props.toggleTask(props.task.id)}
     >
-      <p>{props.task.task}</p>
+      <Segment color="grey" align="center">
+        <Icon name="check" />{props.task.task}
+      </Segment>
     </div>
   );
 };
